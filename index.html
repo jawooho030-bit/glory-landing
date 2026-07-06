@@ -15,8 +15,9 @@
 <meta property="og:image" content="assets/cover.jpg">
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animation.css">
 
-<!-- GA4 -->
+<!-- ================= GA4 ================= -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -25,7 +26,7 @@ gtag('js', new Date());
 gtag('config', 'G-XXXXXXXX');
 </script>
 
-<!-- Meta Pixel -->
+<!-- ================= Meta Pixel ================= -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -40,6 +41,9 @@ fbq('init', 'XXXXXXXXXXXX');
 fbq('track', 'PageView');
 </script>
 
+<!-- ================= V7 TRACK SYSTEM ================= -->
+<script src="js/v7-track.js"></script>
+
 </head>
 
 <body>
@@ -47,8 +51,11 @@ fbq('track', 'PageView');
 <!-- ================= A/B TEST CONFIG ================= -->
 <script>
 const AB_TEST = {
-  hero: Math.random() > 0.5 ? 'A' : 'B'
+  hero: localStorage.getItem("glory_hero")
+        || (Math.random() > 0.5 ? 'A' : 'B')
 };
+
+localStorage.setItem("glory_hero", AB_TEST.hero);
 </script>
 
 <!-- ================= HEADER ================= -->
@@ -58,7 +65,8 @@ const AB_TEST = {
 
     <div class="logo">GLORY</div>
 
-    <a onclick="openLine('header_cta')" class="header-cta">
+    <a class="header-cta"
+       onclick="track('line_click_header',{pos:'header'}); openLine('header_cta')">
       Consultation
     </a>
 
@@ -66,36 +74,25 @@ const AB_TEST = {
 
 </header>
 
-<!-- ================= HERO (A/B TEST) ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero">
 
   <div class="container hero-inner">
 
     <p class="eyebrow">GLORY MYEONGDONG</p>
 
-    <!-- HERO A -->
     <div id="heroA" style="display:none">
-      <h1>
-        Personalized Skin<br>
-        Consultation in Seoul
-      </h1>
-      <p class="subtext">
-        We start with understanding your skin condition first.
-      </p>
+      <h1>Personalized Skin<br>Consultation in Seoul</h1>
+      <p class="subtext">We start with understanding your skin condition first.</p>
     </div>
 
-    <!-- HERO B -->
     <div id="heroB" style="display:none">
-      <h1>
-        Not All Skin Needs<br>
-        The Same Treatment
-      </h1>
-      <p class="subtext">
-        Personalized consultation before any procedure.
-      </p>
+      <h1>Not All Skin Needs<br>The Same Treatment</h1>
+      <p class="subtext">Personalized consultation before any procedure.</p>
     </div>
 
-    <a class="primary-btn" onclick="openLine('hero_cta')">
+    <a class="primary-btn"
+       onclick="track('line_click_hero',{variant:AB_TEST.hero}); openLine('hero_cta')">
       Start Consultation
     </a>
 
@@ -105,17 +102,12 @@ const AB_TEST = {
 
 <!-- ================= BRAND ================= -->
 <section class="section">
-
   <div class="container">
-
     <h2 class="title">Why GLORY</h2>
-
     <p class="desc">
       A personalized dermatology consultation experience designed for overseas visitors in Seoul.
     </p>
-
   </div>
-
 </section>
 
 <!-- ================= SERVICES ================= -->
@@ -123,17 +115,20 @@ const AB_TEST = {
 
   <div class="container grid-3">
 
-    <div class="card" onclick="openLine('service_skin')">
+    <div class="card"
+         onclick="track('service_click',{type:'skin'}); openLine('service_skin')">
       <h3>Skin Issues</h3>
       <p>Acne · Pores · Sensitivity</p>
     </div>
 
-    <div class="card" onclick="openLine('service_antiaging')">
+    <div class="card"
+         onclick="track('service_click',{type:'antiaging'}); openLine('service_antiaging')">
       <h3>Anti-aging</h3>
       <p>Lifting · Elasticity · Firming</p>
     </div>
 
-    <div class="card" onclick="openLine('service_first')">
+    <div class="card"
+         onclick="track('service_click',{type:'first'}); openLine('service_first')">
       <h3>First Visit</h3>
       <p>We guide you step by step</p>
     </div>
@@ -185,7 +180,8 @@ const AB_TEST = {
       <li>Personalized Treatment Planning</li>
     </ul>
 
-    <a class="primary-btn" onclick="openLine('doctor_cta')">
+    <a class="primary-btn"
+       onclick="track('line_click_doctor'); openLine('doctor_cta')">
       Talk With Us
     </a>
 
@@ -201,10 +197,10 @@ const AB_TEST = {
     <h2 class="title">Simple Process</h2>
 
     <div class="steps">
-      <div onclick="openLine('step1')">01 Add LINE</div>
-      <div onclick="openLine('step2')">02 Consultation</div>
-      <div onclick="openLine('step3')">03 Reservation</div>
-      <div onclick="openLine('step4')">04 Visit Clinic</div>
+      <div onclick="track('step_click',{step:1}); openLine('step1')">01 Add LINE</div>
+      <div onclick="track('step_click',{step:2}); openLine('step2')">02 Consultation</div>
+      <div onclick="track('step_click',{step:3}); openLine('step3')">03 Reservation</div>
+      <div onclick="track('step_click',{step:4}); openLine('step4')">04 Visit Clinic</div>
     </div>
 
   </div>
@@ -216,13 +212,10 @@ const AB_TEST = {
 
   <div class="container">
 
-    <h2>
-      Start Your Skin Journey<br>
-      Today
-    </h2>
+    <h2>Start Your Skin Journey<br>Today</h2>
 
     <a class="primary-btn big"
-       onclick="openLine('final_cta')">
+       onclick="track('line_click_final'); openLine('final_cta')">
       Consult via LINE
     </a>
 
@@ -231,23 +224,25 @@ const AB_TEST = {
 </section>
 
 <!-- ================= FLOAT ================= -->
-<div class="floating" onclick="openLine('floating_cta')">
+<div class="floating"
+     onclick="track('line_click_float'); openLine('floating_cta')">
   💬
 </div>
 
-<!-- ================= SCRIPTS ================= -->
-<script src="js/script.js"></script>
-<script src="js/line.js"></script>
-
-<!-- ================= V6 HERO A/B LOGIC ================= -->
+<!-- ================= HERO A/B LOGIC ================= -->
 <script>
 window.onload = function () {
 
+  const heroA = document.getElementById('heroA');
+  const heroB = document.getElementById('heroB');
+
   if (AB_TEST.hero === 'A') {
-    document.getElementById('heroA').style.display = 'block';
+    heroA.style.display = 'block';
   } else {
-    document.getElementById('heroB').style.display = 'block';
+    heroB.style.display = 'block';
   }
+
+  track('hero_view', {variant: AB_TEST.hero});
 
 };
 </script>
