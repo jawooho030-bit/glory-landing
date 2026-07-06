@@ -1,1 +1,19 @@
+@media (max-width: 768px) {
 
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
