@@ -1,181 +1,261 @@
 
 /* =========================
-GLORY V8.1 RESPONSIVE SYSTEM
-Mobile First + Conversion Optimized
+GLORY V8.2 FIX SYSTEM
+Clean + Stable + Conversion Safe
 ========================= */
 
 /* =========================
-Base Safety
+ROOT
 ========================= */
-img, video {
-  max-width: 100%;
-  height: auto;
+:root {
+  --bg: #F7F6F2;
+  --surface: #FFFFFF;
+  --text: #111111;
+  --muted: #8A94A6;
+
+  --primary: #6FA8FF;
+  --primary-dark: #3D7CFF;
+
+  --line: #00C300;
+  --border: #E6E9EF;
+
+  --shadow: 0 12px 30px rgba(17,17,17,0.08);
 }
 
+/* =========================
+RESET (FIXED)
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =========================
+LAYOUT
+========================= */
 .container {
-  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
 }
 
 /* =========================
-Large Desktop (1400px+)
+HEADER
 ========================= */
-@media (max-width: 1400px) {
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(247,246,242,0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 999;
+}
 
-  .container {
-    padding: 0 80px;
-  }
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
 
-  .hero h1 {
-    font-size: 54px;
-  }
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 /* =========================
-Laptop (1200px)
+HERO
 ========================= */
+.hero {
+  padding: 140px 0 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.subtext {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+/* =========================
+BUTTONS
+========================= */
+.primary-btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================
+GRID (FIXED SAFE)
+========================= */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* =========================
+CARD
+========================= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+TEXT
+========================= */
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* =========================
+STEPS
+========================= */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.steps div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* =========================
+CTA
+========================= */
+.cta {
+  text-align: center;
+  background: var(--surface);
+}
+
+/* =========================
+FLOAT BUTTON
+========================= */
+.floating {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  background: var(--line);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  animation: pulse 2.5s infinite;
+}
+
+/* =========================
+ANIMATION (SAFE ONLY)
+========================= */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+RESPONSIVE FIXED ZONE
+========================= */
+
 @media (max-width: 1200px) {
-
-  .container {
-    padding: 0 60px;
-  }
-
-  .hero h1 {
-    font-size: 46px;
-  }
-
-  .grid-3 {
-    gap: 18px;
-  }
+  .hero h1 { font-size: 38px; }
 }
 
-/* =========================
-Tablet Landscape (992px)
-========================= */
 @media (max-width: 992px) {
-
-  .hero h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  .steps {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr 1fr;
-  }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
 }
 
-/* =========================
-Tablet Portrait (768px)
-========================= */
 @media (max-width: 768px) {
 
-  .container {
-    padding: 0 20px;
-  }
+  section { padding: 60px 0; }
 
-  /* HERO */
-  .hero {
-    padding: 120px 0 60px;
-  }
+  .hero h1 { font-size: 32px; }
 
-  .hero h1 {
-    font-size: 32px;
-    line-height: 1.3;
-  }
+  .grid-3 { grid-template-columns: 1fr; }
 
-  .subtext {
-    font-size: 14px;
-  }
+  .steps { grid-template-columns: 1fr; }
 
-  /* GRID → SINGLE COLUMN */
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  /* STEPS */
-  .steps {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  /* BUTTONS */
   .primary-btn {
     width: 100%;
     text-align: center;
-    padding: 16px;
-  }
-
-  /* CARD */
-  .card {
-    padding: 18px;
   }
 }
 
-/* =========================
-Mobile Large (576px)
-========================= */
-@media (max-width: 576px) {
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  section {
-    padding: 60px 0;
-  }
-
-  .header .container {
-    padding: 10px 16px;
-  }
-
-  .logo {
-    font-size: 14px;
-  }
-
-  .header-cta {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  /* FLOAT BUTTON */
-  .floating {
-    width: 52px;
-    height: 52px;
-    font-size: 20px;
-    right: 14px;
-    bottom: 14px;
-  }
-}
-
-/* =========================
-Small Mobile (390px)
-========================= */
 @media (max-width: 390px) {
+  .hero h1 { font-size: 26px; }
+  .container { padding: 0 14px; }
+}
 
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  .subtext {
-    font-size: 13px;
-  }
-
-  .container {
-    padding: 0 14px;
-  }
-
-  .card {
-    padding: 14px;
+/* =========================
+MOTION SAFE
+========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
