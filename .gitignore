@@ -23,7 +23,7 @@ logs/
 *.cache
 
 # =========================
-# Node (如果未來升級用)
+# Node (future use)
 # =========================
 node_modules/
 npm-debug.log*
@@ -31,7 +31,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # =========================
-# Build output (未來可能用)
+# Build output
 # =========================
 dist/
 build/
@@ -42,6 +42,32 @@ build/
 .env
 .env.local
 .env.*.local
+
+# =========================
+# Deployment
+# =========================
+.github/
+
+# =========================
+# Design files
+# =========================
+*.psd
+*.sketch
+*.fig
+*.ai
+*.xd
+
+# =========================
+# Internal assets
+# =========================
+private/
+internal/
+
+# =========================
+# Analytics exports
+# =========================
+analytics-export/
+report/
 
 # =========================
 # Optional backups
