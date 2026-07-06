@@ -3,11 +3,9 @@
 // ONLY SOURCE OF LINE_URL
 // =========================
 
-const LINE_URL = "https://line.me/xxxxx"; // 改成你的
+const LINE_URL = "https://line.me/ti/p/484lolur";
 
 function openLine(source = "unknown") {
-  // tracking（未來可接GA4/Meta）
-  console.log("LINE click from:", source);
-
+  console.log("LINE click:", source);
   window.open(LINE_URL, "_blank");
 }
