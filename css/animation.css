@@ -1,15 +1,16 @@
 /* =========================
-GLORY V6 Animation System
-Luxury Minimal Motion (Conversion Safe)
+GLORY V7 Animation System
+Luxury Minimal Motion (Ads Optimized + Stable)
 ========================= */
 
 /* ===== Base ===== */
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 /* =========================
-Fade In (page load)
+Fade In (page load only)
 ========================= */
 @keyframes fadeIn {
   from {
@@ -23,12 +24,12 @@ Fade In (page load)
 }
 
 /* =========================
-Soft Slide Up (sections)
+Soft Slide Up (reusable)
 ========================= */
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -37,98 +38,96 @@ Soft Slide Up (sections)
 }
 
 /* =========================
-Apply on load
+Pulse (floating CTA)
+========================= */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 150, 100, 0.35);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(0, 150, 100, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 150, 100, 0);
+  }
+}
+
+/* =========================
+Page Load Animation (safe only on body)
 ========================= */
 body {
   animation: fadeIn 0.6s ease-out;
 }
 
 /* =========================
-Section reveal (use JS optional)
+Simple reveal class (IMPORTANT)
+👉 這是V7穩定版本核心
 ========================= */
-.section,
-.hero,
-.card,
-.feature-card,
-.review-card {
+.reveal {
   opacity: 0;
   transform: translateY(20px);
-  animation: slideUp 0.8s ease-out forwards;
+  transition: all 0.7s ease;
 }
 
-/* stagger effect */
-.section:nth-child(1) { animation-delay: 0.1s; }
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.3s; }
-.section:nth-child(4) { animation-delay: 0.4s; }
-
-/* =========================
-Hover effects (CTA)
-========================= */
-.btn-primary,
-.btn-big,
-.header-cta {
-  transition: all 0.25s ease;
-}
-
-.btn-primary:hover,
-.btn-big:hover,
-.header-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
-Card hover (premium feel)
+Hover Effects (Premium feel)
 ========================= */
 .card,
 .feature-card,
 .review-card {
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .card:hover,
 .feature-card:hover,
 .review-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================
-Floating LINE button pulse
+Buttons hover (CTA conversion focus)
 ========================= */
-@keyframes pulse {
-
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 150, 100, 0.4);
-  }
-
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 12px rgba(0, 150, 100, 0);
-  }
-
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 150, 100, 0);
-  }
-
+.primary-btn,
+.btn-primary,
+.btn-big,
+.header-cta {
+  transition: all 0.2s ease;
 }
 
+.primary-btn:hover,
+.btn-primary:hover,
+.btn-big:hover,
+.header-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+Floating LINE Button
+========================= */
 .floating {
   animation: pulse 2.5s infinite;
 }
 
 /* =========================
-Text reveal (optional luxury feel)
+Typography soft fade
 ========================= */
-h1, h2 {
+h1,
+h2 {
   animation: fadeIn 0.8s ease-out;
 }
 
 /* =========================
-Reduce motion (important for ads)
+Reduce Motion (Ads compliance)
 ========================= */
 @media (prefers-reduced-motion: reduce) {
   * {
