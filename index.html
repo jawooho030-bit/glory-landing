@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GLORY Myeongdong | Personalized Skin Clinic</title>
+<title>GLORY Myeongdong | Skin Consultation Seoul</title>
 
-<meta name="description" content="Personalized skin consultation in Myeongdong, Seoul. Chinese support available.">
+<meta name="description" content="Personalized dermatology consultation in Seoul. Chinese support available.">
 
 <meta property="og:title" content="GLORY Myeongdong">
 <meta property="og:description" content="Personalized Skin Solutions in Seoul">
@@ -16,18 +16,49 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXX');
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', 'XXXXXXXXXXXX');
+fbq('track', 'PageView');
+</script>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= A/B TEST CONFIG ================= -->
+<script>
+const AB_TEST = {
+  hero: Math.random() > 0.5 ? 'A' : 'B'
+};
+</script>
+
+<!-- ================= HEADER ================= -->
 <header class="header">
 
   <div class="container">
 
     <div class="logo">GLORY</div>
 
-    <a class="header-cta" onclick="openLine('header_cta')">
+    <a onclick="openLine('header_cta')" class="header-cta">
       Consultation
     </a>
 
@@ -35,21 +66,34 @@
 
 </header>
 
-<!-- HERO (高級留白版) -->
+<!-- ================= HERO (A/B TEST) ================= -->
 <section class="hero">
 
   <div class="container hero-inner">
 
     <p class="eyebrow">GLORY MYEONGDONG</p>
 
-    <h1>
-      Personalized Skin<br>
-      Consultation
-    </h1>
+    <!-- HERO A -->
+    <div id="heroA" style="display:none">
+      <h1>
+        Personalized Skin<br>
+        Consultation in Seoul
+      </h1>
+      <p class="subtext">
+        We start with understanding your skin condition first.
+      </p>
+    </div>
 
-    <p class="subtext">
-      We begin by understanding your skin, not selling treatments.
-    </p>
+    <!-- HERO B -->
+    <div id="heroB" style="display:none">
+      <h1>
+        Not All Skin Needs<br>
+        The Same Treatment
+      </h1>
+      <p class="subtext">
+        Personalized consultation before any procedure.
+      </p>
+    </div>
 
     <a class="primary-btn" onclick="openLine('hero_cta')">
       Start Consultation
@@ -59,58 +103,85 @@
 
 </section>
 
-<!-- BRAND STATEMENT -->
+<!-- ================= BRAND ================= -->
 <section class="section">
 
   <div class="container">
 
-    <h2 class="title">
-      More Than Treatment<br>
-      A Personalized Approach
-    </h2>
+    <h2 class="title">Why GLORY</h2>
 
     <p class="desc">
-      Every skin condition is different. Our consultation focuses on understanding your needs before any recommendation.
+      A personalized dermatology consultation experience designed for overseas visitors in Seoul.
     </p>
 
   </div>
 
 </section>
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 <section class="section">
 
   <div class="container grid-3">
 
-    <div class="card">
-      <h3>Skin Concerns</h3>
+    <div class="card" onclick="openLine('service_skin')">
+      <h3>Skin Issues</h3>
       <p>Acne · Pores · Sensitivity</p>
     </div>
 
-    <div class="card">
+    <div class="card" onclick="openLine('service_antiaging')">
       <h3>Anti-aging</h3>
       <p>Lifting · Elasticity · Firming</p>
     </div>
 
-    <div class="card">
-      <h3>Consultation</h3>
-      <p>Personalized guidance for first-time visitors</p>
+    <div class="card" onclick="openLine('service_first')">
+      <h3>First Visit</h3>
+      <p>We guide you step by step</p>
     </div>
 
   </div>
 
 </section>
 
-<!-- DOCTOR -->
+<!-- ================= SOCIAL PROOF ================= -->
 <section class="section">
 
   <div class="container">
 
-    <h2 class="title">Medical Expertise With Communication</h2>
+    <h2 class="title">Patient Experience</h2>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <p>“Clear explanation in Chinese. Very comfortable.”</p>
+        <span>- Taiwan</span>
+      </div>
+
+      <div class="card">
+        <p>“Professional and not rushed.”</p>
+        <span>- Hong Kong</span>
+      </div>
+
+      <div class="card">
+        <p>“They listen before recommending anything.”</p>
+        <span>- Singapore</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= DOCTOR ================= -->
+<section class="section">
+
+  <div class="container">
+
+    <h2 class="title">Medical Expertise</h2>
 
     <ul class="list">
       <li>Korea University Graduate</li>
-      <li>Clinical Experience in Aesthetic Medicine</li>
+      <li>Clinical Dermatology Experience</li>
       <li>Personalized Treatment Planning</li>
     </ul>
 
@@ -122,27 +193,25 @@
 
 </section>
 
-<!-- JOURNEY -->
+<!-- ================= JOURNEY ================= -->
 <section class="section">
 
   <div class="container">
 
-    <h2 class="title">Simple Consultation Process</h2>
+    <h2 class="title">Simple Process</h2>
 
     <div class="steps">
-
-      <div>01 Add LINE</div>
-      <div>02 Consultation</div>
-      <div>03 Reservation</div>
-      <div>04 Visit Clinic</div>
-
+      <div onclick="openLine('step1')">01 Add LINE</div>
+      <div onclick="openLine('step2')">02 Consultation</div>
+      <div onclick="openLine('step3')">03 Reservation</div>
+      <div onclick="openLine('step4')">04 Visit Clinic</div>
     </div>
 
   </div>
 
 </section>
 
-<!-- FINAL CTA -->
+<!-- ================= FINAL CTA ================= -->
 <section class="cta">
 
   <div class="container">
@@ -161,26 +230,27 @@
 
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-
-  <div class="container">
-
-    <div>GLORY Myeongdong</div>
-
-    <a onclick="openLine('footer_cta')">LINE</a>
-
-  </div>
-
-</footer>
-
-<!-- FLOAT -->
+<!-- ================= FLOAT ================= -->
 <div class="floating" onclick="openLine('floating_cta')">
   💬
 </div>
 
+<!-- ================= SCRIPTS ================= -->
 <script src="js/script.js"></script>
 <script src="js/line.js"></script>
+
+<!-- ================= V6 HERO A/B LOGIC ================= -->
+<script>
+window.onload = function () {
+
+  if (AB_TEST.hero === 'A') {
+    document.getElementById('heroA').style.display = 'block';
+  } else {
+    document.getElementById('heroB').style.display = 'block';
+  }
+
+};
+</script>
 
 </body>
 </html>
