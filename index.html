@@ -9,29 +9,69 @@
 
 <meta name="description" content="韓國明洞肌膚管理中心｜痘痘・毛孔・敏感肌・抗老｜全程中文LINE諮詢">
 
-<!-- ✅ OG 修正（重點） -->
 <meta property="og:title" content="GLORY 明洞｜韓國肌膚管理">
 <meta property="og:description" content="韓國客製化肌膚管理｜LINE中文諮詢">
 <meta property="og:image" content="assets/images/hero.jpg">
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/animation.css">
 
 <style>
-/* ===== HERO UPGRADE ===== */
+
+/* ================= BASE ================= */
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  color:#111;
+}
+
+.section{
+  padding:80px 20px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+.header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  z-index:10;
+}
+
+.header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+}
+
+.logo img{
+  height:40px;
+}
+
+.header-cta{
+  background:#111;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* ================= HERO ================= */
 .hero-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:40px;
-  padding:60px 20px;
 }
 
 .hero-text{flex:1;}
 
-.hero-img{
-  flex:1;
-}
+.hero-img{flex:1;}
 
 .hero-img img{
   width:100%;
@@ -39,7 +79,15 @@
   object-fit:cover;
 }
 
-/* CTA */
+h1{
+  font-size:36px;
+  margin:10px 0;
+}
+
+.subtext{
+  color:#555;
+}
+
 .primary-btn{
   display:inline-block;
   margin-top:20px;
@@ -50,7 +98,16 @@
   text-decoration:none;
 }
 
-/* GRID */
+/* ================= TRUST ================= */
+.trust-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* ================= GRID ================= */
 .grid-3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -61,18 +118,44 @@
   padding:20px;
   border:1px solid #eee;
   border-radius:12px;
-  cursor:pointer;
+  background:#fff;
+  transition:0.3s;
 }
 
-/* FLOAT */
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= IMAGES ================= */
+.card img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.cta .primary-btn{
+  background:#fff;
+  color:#111;
+}
+
+/* ================= FLOAT ================= */
 .floating{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#00c300;
-  color:#fff;
   width:56px;
   height:56px;
+  background:#00c300;
+  color:#fff;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -81,46 +164,52 @@
   cursor:pointer;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:768px){
-  .hero-inner{
-    flex-direction:column;
-  }
 
-  .grid-3{
-    grid-template-columns:1fr;
-  }
+.hero-inner{
+  flex-direction:column;
 }
+
+.grid-3{
+  grid-template-columns:1fr;
+}
+
+.trust-grid{
+  flex-direction:column;
+}
+}
+
 </style>
 
 </head>
 
 <body>
 
-<!-- LINE SYSTEM -->
 <script src="js/line.js"></script>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container">
+
     <div class="logo">
-      <img src="assets/logo/logo.jpg" alt="GLORY Logo" style="height:40px;">
+      <img src="assets/logo/logo.jpg" alt="GLORY Logo">
     </div>
 
     <a class="header-cta" onclick="openLine('header_cta')">
       LINE 諮詢
     </a>
+
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="hero">
+<section class="section">
   <div class="container hero-inner">
 
-    <!-- TEXT -->
     <div class="hero-text">
 
-      <p class="eyebrow">GLORY 明洞｜韓國肌膚管理中心</p>
+      <p>GLORY 明洞｜韓國肌膚管理中心</p>
 
       <h1>韓國客製化肌膚管理</h1>
 
@@ -130,35 +219,53 @@
       </p>
 
       <a class="primary-btn" onclick="openLine('hero_cta')">
-        立即用 LINE 諮詢（中文服務）
+        立即用 LINE 諮詢
       </a>
 
     </div>
 
-    <!-- IMAGE -->
     <div class="hero-img">
-      <img src="assets/images/hero.jpg" alt="GLORY Skin Clinic">
+      <img src="assets/images/hero.jpg">
     </div>
 
   </div>
 </section>
 
-<!-- ================= WHY ================= -->
+<!-- ================= TRUST ================= -->
+<section class="section">
+  <div class="container trust-grid">
+
+    <div>✔ 中文專人諮詢</div>
+    <div>✔ 韓國專業肌膚管理</div>
+    <div>✔ 客製化療程設計</div>
+
+  </div>
+</section>
+
+<!-- ================= YOU PROBLEM ================= -->
 <section class="section">
   <div class="container">
 
-    <h2>為什麼選擇 GLORY</h2>
+    <h2>你現在的肌膚狀況是？</h2>
 
-    <p class="desc">
-      專為海外旅客設計的韓國肌膚管理流程
-    </p>
+    <div class="grid-3">
 
-    <ul class="list">
-      <li>✔ 全程中文 LINE 諮詢</li>
-      <li>✔ 韓國專業肌膚管理團隊</li>
-      <li>✔ 客製化療程設計</li>
-      <li>✔ 明洞核心地段</li>
-    </ul>
+      <div class="card" onclick="openLine('acne')">
+        <h3>痘痘反覆</h3>
+        <img src="assets/images/treatment_1.jpg">
+      </div>
+
+      <div class="card" onclick="openLine('pores')">
+        <h3>毛孔粗大</h3>
+        <img src="assets/images/treatment_2.jpg">
+      </div>
+
+      <div class="card" onclick="openLine('sensitive')">
+        <h3>敏感肌</h3>
+        <img src="assets/images/treatment_3.jpg">
+      </div>
+
+    </div>
 
   </div>
 </section>
@@ -167,25 +274,66 @@
 <section class="section">
   <div class="container grid-3">
 
-    <div class="card" onclick="openLine('skin')">
+    <div class="card">
       <h3>膚況改善</h3>
-      <p>痘痘・粉刺・毛孔粗大・敏感肌</p>
+      <p>痘痘・粉刺・油脂問題</p>
     </div>
 
-    <div class="card" onclick="openLine('antiaging')">
-      <h3>抗老緊緻</h3>
-      <p>拉提・細紋・彈性流失</p>
+    <div class="card">
+      <h3>抗老管理</h3>
+      <p>緊緻・拉提・細紋</p>
     </div>
 
-    <div class="card" onclick="openLine('firstvisit')">
-      <h3>第一次來韓國？</h3>
-      <p>中文帶你完整了解流程</p>
+    <div class="card">
+      <h3>首次來韓</h3>
+      <p>全流程中文協助</p>
     </div>
 
   </div>
 </section>
 
-<!-- ================= SOCIAL PROOF ================= -->
+<!-- ================= DOCTOR ================= -->
+<section class="section">
+  <div class="container hero-inner">
+
+    <div class="hero-img">
+      <img src="assets/images/doctor.jpg">
+    </div>
+
+    <div class="hero-text">
+      <h2>專業肌膚管理團隊</h2>
+      <p>由韓國在地專業人員提供客製化建議</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= BEFORE AFTER ================= -->
+<section class="section">
+  <div class="container">
+
+    <h2>改善案例</h2>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <img src="assets/images/clinic_1.jpg">
+      </div>
+
+      <div class="card">
+        <img src="assets/images/clinic_2.jpg">
+      </div>
+
+      <div class="card">
+        <img src="assets/images/clinic_3.jpg">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
 <section class="section">
   <div class="container">
 
@@ -193,37 +341,10 @@
 
     <div class="grid-3">
 
-      <div class="card">
-        <p>「中文溝通很清楚，不會有壓力」</p>
-        <span>- 台灣旅客</span>
-      </div>
+      <div class="card">“中文溝通很清楚”</div>
+      <div class="card">“流程很安心”</div>
+      <div class="card">“不會強迫推銷”</div>
 
-      <div class="card">
-        <p>「不會強迫推銷，先分析再建議」</p>
-        <span>- 香港旅客</span>
-      </div>
-
-      <div class="card">
-        <p>「整體流程很安心」</p>
-        <span>- 新加坡旅客</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section class="section">
-  <div class="container">
-
-    <h2>預約流程</h2>
-
-    <div class="steps">
-      <div>01 加 LINE</div>
-      <div>02 說明肌膚狀況</div>
-      <div>03 安排時間</div>
-      <div>04 到店諮詢</div>
     </div>
 
   </div>
@@ -231,20 +352,18 @@
 
 <!-- ================= FINAL CTA ================= -->
 <section class="cta">
-  <div class="container">
 
-    <h2>開始你的韓國肌膚管理</h2>
+  <h2>開始你的韓國肌膚管理</h2>
 
-    <p>先了解，再決定，不會有壓力</p>
+  <p>先了解，再決定</p>
 
-    <a class="primary-btn" onclick="openLine('final_cta')">
-      立即用 LINE 諮詢（中文服務）
-    </a>
+  <a class="primary-btn" onclick="openLine('final_cta')">
+    立即用 LINE 諮詢
+  </a>
 
-  </div>
 </section>
 
-<!-- FLOAT LINE -->
+<!-- ================= FLOAT ================= -->
 <div class="floating" onclick="openLine('floating_cta')">
   💬
 </div>
