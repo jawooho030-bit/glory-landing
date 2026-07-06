@@ -20,19 +20,14 @@
 
 <body>
 
-<!-- ================= LINE SYSTEM ================= -->
-<script>
-const LINE_URL = "https://line.me/ti/p/484lolur";
-
-function openLine(source){
-  window.open(LINE_URL, "_blank");
-}
-</script>
+<!-- ================= LINE SYSTEM (ONLY JS FILE SHOULD OWN THIS) ================= -->
+<script src="js/line.js"></script>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="container">
     <div class="logo">GLORY</div>
+
     <a class="header-cta" onclick="openLine('header_cta')">
       LINE 諮詢
     </a>
@@ -45,9 +40,7 @@ function openLine(source){
 
     <p class="eyebrow">GLORY 明洞｜韓國肌膚管理中心</p>
 
-    <h1>
-      韓國客製化肌膚管理
-    </h1>
+    <h1>韓國客製化肌膚管理</h1>
 
     <p class="subtext">
       痘痘・毛孔・敏感肌・抗老問題｜全程中文 LINE 諮詢
@@ -165,9 +158,6 @@ function openLine(source){
 <div class="floating" onclick="openLine('floating_cta')">
   💬
 </div>
-
-<!-- ================= SCRIPTS ================= -->
-<script src="js/script.js"></script>
 
 </body>
 </html>
