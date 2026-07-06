@@ -1,28 +1,28 @@
-const LINE_URL = "https://line.me/ti/p/484lolur";
+// =========================
+// GLORY SCRIPT V8 CLEAN
+// UI / AB TEST / ANIMATION
+// =========================
 
-/* =========================
-OPEN LINE + TRACKING
-========================= */
-function openLine(source) {
+// -------- A/B TEST --------
+const AB_TEST = {
+  hero: Math.random() > 0.5 ? "A" : "B"
+};
 
-  // 1. 打開 LINE
-  window.open(LINE_URL, "_blank");
+// -------- HERO SWITCH --------
+window.addEventListener("DOMContentLoaded", () => {
+  const heroA = document.getElementById("heroA");
+  const heroB = document.getElementById("heroB");
 
-  // 2. GA4 追蹤（如果有 GA4）
-  if (typeof gtag !== "undefined") {
-    gtag('event', 'line_click', {
-      'event_category': 'conversion',
-      'event_label': source
-    });
+  if (heroA && heroB) {
+    if (AB_TEST.hero === "A") {
+      heroA.style.display = "block";
+    } else {
+      heroB.style.display = "block";
+    }
   }
+});
 
-  // 3. Meta Pixel 追蹤（如果有 Pixel）
-  if (typeof fbq !== "undefined") {
-    fbq('track', 'Contact', {
-      content_name: source
-    });
-  }
-
-  // 4. console debug（方便你測試）
-  console.log("LINE clicked:", source);
-}
+// -------- SMOOTH SCROLL (optional future) --------
+document.addEventListener("DOMContentLoaded", () => {
+  document.documentElement.style.scrollBehavior = "smooth";
+});
