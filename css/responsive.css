@@ -1,19 +1,196 @@
-@media (max-width: 768px) {
+/* =========================
+GLORY V6 Responsive System
+Mobile First (Meta Ads Optimized)
+========================= */
+
+/* ===== Base Reset (safe override) ===== */
+* {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+Large Desktop
+========================= */
+@media (max-width: 1400px) {
+
+  .container {
+    padding: 0 80px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+}
+
+/* =========================
+Laptop
+========================= */
+@media (max-width: 1200px) {
+
+  .container {
+    padding: 0 60px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .grid {
+    gap: 20px;
+  }
+
+}
+
+/* =========================
+Tablet Landscape
+========================= */
+@media (max-width: 992px) {
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
 
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero h1 {
-    font-size: 22px;
+  .hero {
+    padding: 120px 0;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
 }
 
-@media (max-width: 480px) {
+/* =========================
+Tablet Portrait
+========================= */
+@media (max-width: 768px) {
 
+  .container {
+    padding: 0 24px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* CTA buttons */
+  .btn-primary,
+  .btn-big {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
+
+  /* GRID → 1 column */
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  /* WHY GLORY */
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* DOCTOR */
+  .doctor-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-image {
+    margin-bottom: 20px;
+  }
+
+  /* JOURNEY */
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =========================
+Mobile Large
+========================= */
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .hero {
+    padding: 100px 0;
+  }
+
+  .header {
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  /* CTA FLOAT BUTTON */
+  .floating {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+}
+
+/* =========================
+Small Mobile
+========================= */
+@media (max-width: 390px) {
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .card {
+    padding: 16px;
   }
 
 }
