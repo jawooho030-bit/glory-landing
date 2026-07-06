@@ -1,1 +1,14 @@
+# macOS
+.DS_Store
 
+# VSCode
+.vscode/
+
+# node
+node_modules/
+
+# logs
+*.log
+
+# temp
+*.tmp
