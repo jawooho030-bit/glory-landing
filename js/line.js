@@ -1,2 +1,7 @@
-// LINE 導流連結（全站統一管理）
-const lineUrl = "https://lin.ee/xxxxxx";
+// 🔥 LINE 只改這裡
+const lineUrl = "https://line.me/ti/p/484lolur";
+
+function openLine(source) {
+  console.log("click from:", source);
+  window.open(lineUrl, "_blank");
+}
