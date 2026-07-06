@@ -1,9 +1,12 @@
-window.addEventListener("scroll", () => {
-  const btn = document.getElementById("floatingLine");
+const lineUrl = "https://lin.ee/xxxxxx";
 
-  if (window.scrollY > 300) {
-    btn.style.opacity = "1";
-  } else {
-    btn.style.opacity = "1";
+function openLine(source) {
+
+  console.log("CTA:", source);
+
+  if (typeof fbq !== "undefined") {
+    fbq('trackCustom', 'LINE_CLICK', { source });
   }
-});
+
+  window.open(lineUrl, "_blank");
+}
