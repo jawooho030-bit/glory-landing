@@ -2,250 +2,172 @@
 <html lang="zh-Hant">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GLORY Myeongdong | Skin Consultation Seoul</title>
+<title>GLORY 明洞｜韓國客製化肌膚管理</title>
 
-<meta name="description" content="Personalized dermatology consultation in Seoul. Chinese support available.">
+<meta name="description" content="韓國明洞肌膚管理中心｜痘痘・毛孔・敏感肌・抗老｜全程中文LINE諮詢">
 
-<meta property="og:title" content="GLORY Myeongdong">
-<meta property="og:description" content="Personalized Skin Solutions in Seoul">
+<meta property="og:title" content="GLORY 明洞｜韓國肌膚管理">
+<meta property="og:description" content="韓國客製化肌膚管理｜LINE中文諮詢">
 <meta property="og:image" content="assets/cover.jpg">
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animation.css">
 
-<!-- ================= GA4 ================= -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXX');
-</script>
-
-<!-- ================= Meta Pixel ================= -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', 'XXXXXXXXXXXX');
-fbq('track', 'PageView');
-</script>
-
-<!-- ================= V7 TRACK SYSTEM ================= -->
-<script src="js/v7-track.js"></script>
-
 </head>
 
 <body>
 
-<!-- ================= A/B TEST CONFIG ================= -->
+<!-- ================= LINE SYSTEM ================= -->
 <script>
-const AB_TEST = {
-  hero: localStorage.getItem("glory_hero")
-        || (Math.random() > 0.5 ? 'A' : 'B')
-};
+const LINE_URL = "https://line.me/ti/p/484lolur";
 
-localStorage.setItem("glory_hero", AB_TEST.hero);
+function openLine(source){
+  window.open(LINE_URL, "_blank");
+}
 </script>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
-
   <div class="container">
-
     <div class="logo">GLORY</div>
-
-    <a class="header-cta"
-       onclick="track('line_click_header',{pos:'header'}); openLine('header_cta')">
-      Consultation
+    <a class="header-cta" onclick="openLine('header_cta')">
+      LINE 諮詢
     </a>
-
   </div>
-
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-
   <div class="container hero-inner">
 
-    <p class="eyebrow">GLORY MYEONGDONG</p>
+    <p class="eyebrow">GLORY 明洞｜韓國肌膚管理中心</p>
 
-    <div id="heroA" style="display:none">
-      <h1>Personalized Skin<br>Consultation in Seoul</h1>
-      <p class="subtext">We start with understanding your skin condition first.</p>
-    </div>
+    <h1>
+      韓國客製化肌膚管理
+    </h1>
 
-    <div id="heroB" style="display:none">
-      <h1>Not All Skin Needs<br>The Same Treatment</h1>
-      <p class="subtext">Personalized consultation before any procedure.</p>
-    </div>
+    <p class="subtext">
+      痘痘・毛孔・敏感肌・抗老問題｜全程中文 LINE 諮詢
+    </p>
 
-    <a class="primary-btn"
-       onclick="track('line_click_hero',{variant:AB_TEST.hero}); openLine('hero_cta')">
-      Start Consultation
+    <a class="primary-btn" onclick="openLine('hero_cta')">
+      立即用 LINE 諮詢（中文服務）
     </a>
 
   </div>
-
 </section>
 
-<!-- ================= BRAND ================= -->
+<!-- ================= WHY GLORY ================= -->
 <section class="section">
   <div class="container">
-    <h2 class="title">Why GLORY</h2>
+
+    <h2>為什麼選擇 GLORY</h2>
+
     <p class="desc">
-      A personalized dermatology consultation experience designed for overseas visitors in Seoul.
+      專為海外旅客設計的韓國肌膚管理流程
     </p>
+
+    <ul class="list">
+      <li>✔ 全程中文 LINE 諮詢</li>
+      <li>✔ 韓國專業醫療團隊</li>
+      <li>✔ 客製化肌膚方案</li>
+      <li>✔ 明洞交通便利</li>
+    </ul>
+
   </div>
 </section>
 
 <!-- ================= SERVICES ================= -->
 <section class="section">
-
   <div class="container grid-3">
 
-    <div class="card"
-         onclick="track('service_click',{type:'skin'}); openLine('service_skin')">
-      <h3>Skin Issues</h3>
-      <p>Acne · Pores · Sensitivity</p>
+    <div class="card" onclick="openLine('skin')">
+      <h3>膚況改善</h3>
+      <p>痘痘・粉刺・毛孔粗大・敏感肌</p>
     </div>
 
-    <div class="card"
-         onclick="track('service_click',{type:'antiaging'}); openLine('service_antiaging')">
-      <h3>Anti-aging</h3>
-      <p>Lifting · Elasticity · Firming</p>
+    <div class="card" onclick="openLine('antiaging')">
+      <h3>抗老緊緻</h3>
+      <p>拉提・細紋・彈性流失</p>
     </div>
 
-    <div class="card"
-         onclick="track('service_click',{type:'first'}); openLine('service_first')">
-      <h3>First Visit</h3>
-      <p>We guide you step by step</p>
+    <div class="card" onclick="openLine('firstvisit')">
+      <h3>第一次來韓國？</h3>
+      <p>我們會一步一步帶你了解</p>
     </div>
 
   </div>
-
 </section>
 
 <!-- ================= SOCIAL PROOF ================= -->
 <section class="section">
-
   <div class="container">
 
-    <h2 class="title">Patient Experience</h2>
+    <h2>真實回饋</h2>
 
     <div class="grid-3">
 
       <div class="card">
-        <p>“Clear explanation in Chinese. Very comfortable.”</p>
-        <span>- Taiwan</span>
+        <p>「中文溝通很清楚，不會有壓力」</p>
+        <span>- 台灣旅客</span>
       </div>
 
       <div class="card">
-        <p>“Professional and not rushed.”</p>
-        <span>- Hong Kong</span>
+        <p>「不會一直推銷，先了解再建議」</p>
+        <span>- 香港旅客</span>
       </div>
 
       <div class="card">
-        <p>“They listen before recommending anything.”</p>
-        <span>- Singapore</span>
+        <p>「整體流程很安心」</p>
+        <span>- 新加坡旅客</span>
       </div>
 
     </div>
 
   </div>
-
-</section>
-
-<!-- ================= DOCTOR ================= -->
-<section class="section">
-
-  <div class="container">
-
-    <h2 class="title">Medical Expertise</h2>
-
-    <ul class="list">
-      <li>Korea University Graduate</li>
-      <li>Clinical Dermatology Experience</li>
-      <li>Personalized Treatment Planning</li>
-    </ul>
-
-    <a class="primary-btn"
-       onclick="track('line_click_doctor'); openLine('doctor_cta')">
-      Talk With Us
-    </a>
-
-  </div>
-
 </section>
 
 <!-- ================= JOURNEY ================= -->
 <section class="section">
-
   <div class="container">
 
-    <h2 class="title">Simple Process</h2>
+    <h2>預約流程</h2>
 
     <div class="steps">
-      <div onclick="track('step_click',{step:1}); openLine('step1')">01 Add LINE</div>
-      <div onclick="track('step_click',{step:2}); openLine('step2')">02 Consultation</div>
-      <div onclick="track('step_click',{step:3}); openLine('step3')">03 Reservation</div>
-      <div onclick="track('step_click',{step:4}); openLine('step4')">04 Visit Clinic</div>
+      <div>01 加 LINE（中文諮詢）</div>
+      <div>02 說明肌膚狀況</div>
+      <div>03 安排時間</div>
+      <div>04 到店諮詢</div>
     </div>
 
   </div>
-
 </section>
 
 <!-- ================= FINAL CTA ================= -->
 <section class="cta">
-
   <div class="container">
 
-    <h2>Start Your Skin Journey<br>Today</h2>
+    <h2>開始你的韓國肌膚管理</h2>
 
-    <a class="primary-btn big"
-       onclick="track('line_click_final'); openLine('final_cta')">
-      Consult via LINE
+    <p>先了解，再決定，不會有壓力</p>
+
+    <a class="primary-btn big" onclick="openLine('final_cta')">
+      立即用 LINE 諮詢（中文服務）
     </a>
 
   </div>
-
 </section>
 
-<!-- ================= FLOAT ================= -->
-<div class="floating"
-     onclick="track('line_click_float'); openLine('floating_cta')">
+<!-- ================= FLOAT CTA ================= -->
+<div class="floating" onclick="openLine('floating_cta')">
   💬
 </div>
 
-<!-- ================= HERO A/B LOGIC ================= -->
-<script>
-window.onload = function () {
-
-  const heroA = document.getElementById('heroA');
-  const heroB = document.getElementById('heroB');
-
-  if (AB_TEST.hero === 'A') {
-    heroA.style.display = 'block';
-  } else {
-    heroB.style.display = 'block';
-  }
-
-  track('hero_view', {variant: AB_TEST.hero});
-
-};
-</script>
+<!-- ================= SCRIPTS ================= -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
