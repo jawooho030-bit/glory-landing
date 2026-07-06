@@ -1,20 +1,19 @@
 # =========================
-# System Files
+# System Files (OS)
 # =========================
 .DS_Store
 Thumbs.db
 
 # =========================
-# Editor
+# Editor (可選)
 # =========================
 .vscode/
 .idea/
 
 # =========================
-# Logs
+# Logs (保險)
 # =========================
 *.log
-logs/
 
 # =========================
 # Temporary files
@@ -23,53 +22,28 @@ logs/
 *.cache
 
 # =========================
-# Node (future use)
-# =========================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# =========================
-# Build output
-# =========================
-dist/
-build/
-
-# =========================
-# Environment files
+# Environment files (如果未來加 API 才會用)
 # =========================
 .env
 .env.local
 .env.*.local
 
 # =========================
-# Deployment
+# Node (目前不用，但先留未來擴展)
 # =========================
-.github/
+node_modules/
 
 # =========================
-# Design files
+# Build output (目前沒有，但保留未來)
 # =========================
-*.psd
-*.sketch
-*.fig
-*.ai
-*.xd
+dist/
+build/
 
 # =========================
-# Internal assets
+# IMPORTANT: 保留 assets（不要誤加）
 # =========================
-private/
-internal/
-
-# =========================
-# Analytics exports
-# =========================
-analytics-export/
-report/
-
-# =========================
-# Optional backups
-# =========================
-*.bak
+# ❌ 千萬不要 ignore:
+# assets/
+# css/
+# js/
+# images/
